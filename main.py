@@ -1,8 +1,17 @@
 # @K4isszDev - @K4issz.luv on instagram
-import time
 import sys
+import time
+import pygame
 
 def play():
+    pygame.mixer.init()
+    try:
+        pygame.mixer.music.load("kannadi_poove.mp3") # C:\\Users\\YourName\\Music\\FileName.mp3
+        pygame.mixer.music.play()
+    except pygame.error as e:
+        print(f"Audio file not found or error loading audio: {e}.")
+    except Exception as e:
+        print(f"Unexpected error with audio: {e}.")
     lyrics = {
         0: {'text': "Paavamadi en nenju ", 'speed': 0.07, 'gap_after': 1.5},
         1: {'text': "chinna erumbaachu", 'speed': 0.07, 'gap_after': 1.5},
